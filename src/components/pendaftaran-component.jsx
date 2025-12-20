@@ -8,7 +8,8 @@ import {
     golonganDarahOptions,
     agamaOptions,
     pendidikanOptions,
-    genderOptions
+    genderOptions,
+    tipeOptions
 } from "../data";
 
 const PendaftaranComponent = () => {
@@ -38,6 +39,16 @@ const PendaftaranComponent = () => {
     const [agama, setAgama] = useState("");
     const [pendidikan, setPendidikan] = useState("");
     const [gender, setGender] = useState("");
+    const [nama, setNama] = useState("");
+    const[tempat, setTempat] = useState("");
+    const[date, setDate] = useState("");
+    const[email, setEmail] = useState("");
+    const[noHp, setNoHp] = useState("");
+    const[alamata, setAlamata] = useState("");
+    const[kodePos, setKodePos] = useState("");
+    const[rt, setRt] = useState("");
+    const[rw, setRw] = useState("");
+    const[tipe, setTipe] = useState("");
 
     const getProvince = () => {
         Api.getProvinsi().then(resp => {
@@ -162,25 +173,68 @@ const PendaftaranComponent = () => {
         getProvince()
         if (selectedProvinceId != null) {
             getKabKota();
+        } else {
+            setQueryKabKota("");
+            setSelectedKabKotaId(null);
+            setSuggestionKabKota([]);
         }
 
         if(selectedKabKotaId != null) {
             getKecamatan();
+        } else {
+            setQueryKecamatan("");
+            setSelectedKecamatanId(null);
+            setSuggestionKecamatan([]);
         }
 
         if(selectedKecamatanId != null) {
             getKelurahan();
+        } else {
+            setQueryKelurahan("");
+            setSelectedKelurahanId(null);
+            setSuggestionKelurahan([]);
         }
+
     }, [
         selectedProvinceId,
         selectedKabKotaId,
         selectedKecamatanId
     ]);
 
+    function resetForm() {
+        setNama("")
+        setTempat("")
+        setDate("")
+        setEmail("")
+        setNoHp("")
+        setAlamata("")
+        setKodePos("")
+        setRt("")
+        setRw("")
+        setTipe("")
+        setPekerjaan("")
+        setAgama("")
+        setPendidikan("")
+        setStatusPernikahan("")
+        setGolonganDarah("")
+        setGender("")
+        setQueryKabKota("");
+        setSelectedKabKotaId(null);
+        setSuggestionKabKota([]);
+        setQueryKecamatan("");
+        setSelectedKecamatanId(null);
+        setSuggestionKecamatan([]);
+        setQueryKelurahan("");
+        setSelectedKelurahanId(null);
+        setSuggestionKelurahan([]);
+        setQuery("");
+        setSelectedProvinceId(null);
+        setSuggestions([]);
+
+    }
+
     return (
         <div>
-
-
                 <div className="d-flex flex-row gap-3">
                     <div className="card w-100">
                         <div className="card-header fw-bold">
@@ -434,14 +488,20 @@ const PendaftaranComponent = () => {
 
                                 </div>
                             </div>
-                            <select className="form-select mb-3" aria-label="Default select example">
-                                <option selected>--Pilih Tipe--</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+
+                            <select
+                                className="form-select mb-3"
+                                value={tipe}
+                                onChange={(e) => setTipe(e.target.value)}
+                            >
+                                <option value="">--Pilih Tipe--</option>
+                                {tipeOptions.map(opt => (
+                                    <option key={opt.id} value={opt.id}>{opt.name}</option>
+                                ))}
                             </select>
+
                             <div className={'d-flex flex-row w-100 gap-3'}>
-                                <button type="button" className="btn btn-danger w-100"><i class="bi bi-arrow-counterclockwise"></i> Reset
+                                <button type="button" className="btn btn-danger w-100" onClick={resetForm}><i class="bi bi-arrow-counterclockwise"></i> Reset
                                 </button>
                                 <button type="button" className="btn btn-dark w-100"><i class="bi bi-floppy"></i> Daftar
                                 </button>

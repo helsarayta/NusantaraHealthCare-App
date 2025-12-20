@@ -43,3 +43,9 @@ export const genderOptions = [
     { id: 1, name: "Laki-laki" },
     { id: 2, name: "Perempuan" }
 ];
+
+export const tipeOptions = [
+    { id: 1, name: "Pasien Umum" },
+    { id: 2, name: "Pasien BPJS" },
+    { id: 2, name: "Pasien Asuransi" }
+];

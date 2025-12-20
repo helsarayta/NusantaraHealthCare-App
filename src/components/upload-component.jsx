@@ -50,7 +50,7 @@ const UploadComponent = () => {
                             justifyContent: 'center',
                             background: 'white',
                             borderRadius: '10px',
-                            border: '1px solid gray',
+                            border: '1px dashed gray',
                             zIndex: 1,
                         }}
                     >

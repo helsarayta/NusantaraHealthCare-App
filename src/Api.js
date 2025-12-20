@@ -11,6 +11,16 @@ class Api {
     static getKabKota = (provinceId) => {
         return axios.get(BASE_URL+"regencies/"+provinceId+SUFFIX_JSON)
     }
+
+    static getKecamatan = (kabKotaId) => {
+        return axios.get(BASE_URL+"districts/"+kabKotaId+SUFFIX_JSON)
+
+    }
+
+    static getKelurahan = (kecamatanId) => {
+        return axios.get(BASE_URL+"villages/"+kecamatanId+SUFFIX_JSON)
+
+    }
 }
 
 export default Api;

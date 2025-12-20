@@ -4,7 +4,7 @@ const FooterComponent = () => {
     return (
         <div className="d-flex flex-column">
             <div>
-                Copyright &copy; {new Date().getFullYear()} All Rights Reserved.
+                Copyright &copy; {new Date().getFullYear()} Nusantara HealthCare All Rights Reserved.
             </div>
             <div>
                 Application version : 1.0

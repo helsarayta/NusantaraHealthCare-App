@@ -1,11 +1,72 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import UploadComponent from "./upload-component";
 import BootstrapDatePickerComponent from "./bootstrap-date-picker-component";
+import Api from "../Api"
 
 const PendaftaranComponent = () => {
+    const[provinces, setProvinces] = useState([])
+    const[kabKota, setKabKota] = useState([])
+    const [query, setQuery] = useState("");
+    const [suggestions, setSuggestions] = useState([]);
+    const [selectedProvinceId, setSelectedProvinceId] = useState(null);
+    const[selectedKabKotaId, setSelectedKabKotaId] = useState(null)
+
+    const getProvince = () => {
+        Api.getProvinsi().then(resp => {
+            setProvinces(resp.data)
+        }).catch(e => {
+            console.log(e)
+        })
+    }
+
+    const getKabKota = () => {
+        Api.getKabKota(selectedProvinceId).then(resp => {
+            setKabKota(resp.data)
+        }).catch(e => {
+            console.log(e)
+        })
+    }
+
+    const getKecamatan = () => {
+
+    }
+
+    const getKelurahan = () => {
+
+    }
+
+
+    const handleChangeProvince = (e) => {
+        const value = e.target.value;
+        setQuery(value);
+        setSelectedProvinceId(null); // reset when typing
+
+        if (value.length === 0) {
+            setSuggestions([]);
+        } else {
+            const filtered = provinces.filter(p =>
+                p.name.toLowerCase().includes(value.toLowerCase())
+            );
+            setSuggestions(filtered);
+        }
+    };
+
+    const handleSelectProvince = (province) => {
+        setQuery(province.name);          // display name in input
+        setSelectedProvinceId(province.id); // save id
+        setSuggestions([]);               // hide suggestions
+    };
+
+    useEffect(() => {
+        getProvince()
+        if(selectedProvinceId != null) {
+            getKabKota()
+        }
+    }, [selectedProvinceId]);
+
     return (
         <div>
-            <form>
+
 
                 <div className="d-flex flex-row gap-3">
                     <div className="card w-100">
@@ -107,19 +168,40 @@ const PendaftaranComponent = () => {
                             </div>
                             <div className={'d-flex flex-row gap-2'}>
                                 <div className={'d-flex flex-column w-100'}>
+                                    <div className="mb-3 position-relative">
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            placeholder="Provinsi"
+                                            value={query}
+                                            onChange={handleChangeProvince}
+                                        />
+
+                                        {suggestions.length > 0 && (
+                                            <ul className="list-group position-absolute w-100 z-3">
+                                                {suggestions.map((item, index) => (
+                                                    <li
+                                                        key={index}
+                                                        className="list-group-item list-group-item-action"
+                                                        onClick={() => handleSelectProvince(item)}
+                                                    >
+                                                        {item.name}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        )}
+                                    </div>
                                     <div className="mb-3">
                                         <input type="text" className="form-control" id="kelurahan"
                                                aria-describedby="kelurahan" placeholder={'Kelurahan'}/>
                                     </div>
-                                    <div className="mb-3">
-                                        <input type="text" className="form-control" id="provinsi"
-                                               aria-describedby="provinsi" placeholder={'Provinsi'}/>
-                                    </div>
+
                                     <div className="mb-3">
                                         <input type="text" className="form-control" id="kodepos"
                                                aria-describedby="kodepos" placeholder={'Kodepos'}/>
                                     </div>
                                 </div>
+
                                 <div className={'d-flex flex-column w-100'}>
                                     <div className="mb-3">
                                         <input type="text" className="form-control" id="kecamatan"
@@ -159,7 +241,7 @@ const PendaftaranComponent = () => {
                     </div>
                 </div>
 
-            </form>
+
         </div>
 
     );

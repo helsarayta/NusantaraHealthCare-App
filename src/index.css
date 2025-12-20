@@ -97,3 +97,48 @@ code {
   }
 }
 
+/* Remove default padding */
+.sidebar-menu {
+  padding-left: 0;
+  margin: 0;
+}
+
+/* Sidebar item must be full width */
+.sidebar-item {
+  width: 100%;
+}
+
+/* Button full width */
+.sidebar-link {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  padding: 12px 16px;
+  background: transparent;
+  border: none;
+  border-left: 4px solid transparent;
+
+  color: #212529;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+/* Hover full width */
+.sidebar-item:hover .sidebar-link {
+  background-color: #e9f2ff;
+  border-left-color: #0d6efd;
+  color: #0d6efd;
+}
+
+/* Icon hover */
+.sidebar-item:hover i {
+  color: #0d6efd;
+}
+
+.sidebar-item.active .sidebar-link {
+  background-color: #e9f2ff;
+  border-left-color: #0d6efd;
+  color: #0d6efd;
+  font-weight: 600;
+}

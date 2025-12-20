@@ -1,17 +1,21 @@
-import React from 'react';
-
-const SidebarMenuComponent = ({ onMenuClick }) => {
+const SidebarMenuComponent = ({ onMenuClick, activePage }) => {
     return (
-        <div
-            className="border-end flex-shrink-0"
+        <aside
+            className="sidebar border-end flex-shrink-0"
             style={{width: "220px", minWidth: "220px"}}
         >
-            <img src="/assets/logoNusantaraHealthCare.png" alt="Logo" width="150" height="100"
-                 className="d-inline-block align-text-top"/>
-            <ul className="nav flex-column">
-                <li className="nav-item">
+            <img
+                src="/assets/logoNusantaraHealthCare.png"
+                alt="Logo"
+                width="150"
+                height="100"
+                className="d-block mx-auto my-3"
+            />
+
+            <ul className="nav flex-column sidebar-menu">
+                <li className={`nav-item sidebar-item ${activePage === "pendaftaran" ? "active" : ""}`}>
                     <button
-                        className="nav-link btn btn-link text-start w-100"
+                        className="sidebar-link"
                         onClick={() => onMenuClick("pendaftaran")}
                     >
                         <i className="bi bi-person-add me-2"></i>
@@ -19,9 +23,9 @@ const SidebarMenuComponent = ({ onMenuClick }) => {
                     </button>
                 </li>
 
-                <li className="nav-item">
+                <li className={`nav-item sidebar-item ${activePage === "klinik" ? "active" : ""}`}>
                     <button
-                        className="nav-link btn btn-link text-start w-100"
+                        className="sidebar-link"
                         onClick={() => onMenuClick("klinik")}
                     >
                         <i className="bi bi-box2-heart me-2"></i>
@@ -29,9 +33,9 @@ const SidebarMenuComponent = ({ onMenuClick }) => {
                     </button>
                 </li>
 
-                <li className="nav-item">
+                <li className={`nav-item sidebar-item ${activePage === "farmasi" ? "active" : ""}`}>
                     <button
-                        className="nav-link btn btn-link text-start w-100"
+                        className="sidebar-link"
                         onClick={() => onMenuClick("farmasi")}
                     >
                         <i className="bi bi-bandaid me-2"></i>
@@ -39,9 +43,9 @@ const SidebarMenuComponent = ({ onMenuClick }) => {
                     </button>
                 </li>
             </ul>
-        </div>
+
+        </aside>
     );
 };
-
 
 export default SidebarMenuComponent;

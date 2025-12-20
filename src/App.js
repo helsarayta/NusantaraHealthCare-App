@@ -30,7 +30,7 @@ function App() {
   return (
       <div className="d-flex flex-column min-vh-100">
           <div className="d-flex flex-row flex-grow-1">
-                  <SidebarMenuComponent onMenuClick={setActivePage}/>
+                  <SidebarMenuComponent onMenuClick={setActivePage} activePage={activePage}/>
               <div className={'d-flex flex-column w-100'}>
                    <HeaderComponent/>
                   <main className="flex-grow-1 p-3 overflow-auto">

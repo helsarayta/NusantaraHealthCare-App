@@ -81,4 +81,23 @@ export const docterOptions = [
     { id: 15, name: "dr. Yuliana Hartono, Sp.PD", poli: 5 },
 ];
 
+export const tindakanOptions = [
+    { id: 1, name: "Konsultasi Dokter", tarif: 50000 },
+    { id: 2, name: "Pemeriksaan Tekanan Darah", tarif: 15000 },
+    { id: 3, name: "Pemeriksaan Gula Darah", tarif: 25000 },
+    { id: 4, name: "Pemeriksaan Kolesterol", tarif: 30000 },
+    { id: 5, name: "Pemeriksaan Asam Urat", tarif: 30000 },
+    { id: 6, name: "Penyuntikan Obat", tarif: 20000 },
+    { id: 7, name: "Infus Cairan", tarif: 75000 },
+    { id: 8, name: "Nebulizer", tarif: 40000 },
+    { id: 9, name: "Perawatan Luka", tarif: 60000 },
+    { id: 10, name: "Penjahitan Luka Ringan", tarif: 100000 },
+    { id: 11, name: "Penggantian Balutan Luka", tarif: 25000 },
+    { id: 12, name: "Imunisasi", tarif: 50000 },
+    { id: 13, name: "Pemeriksaan Kehamilan", tarif: 70000 },
+    { id: 14, name: "Tes Kehamilan", tarif: 30000 },
+    { id: 15, name: "Pembuatan Surat Keterangan Sehat", tarif: 20000 }
+];
+
+
 

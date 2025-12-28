@@ -47,5 +47,38 @@ export const genderOptions = [
 export const tipeOptions = [
     { id: 1, name: "Pasien Umum" },
     { id: 2, name: "Pasien BPJS" },
-    { id: 2, name: "Pasien Asuransi" }
+    { id: 3, name: "Pasien Asuransi" }
 ];
+
+
+export const poliOptions = [
+    { id: 1, name: "Poli Umum" },
+    { id: 2, name: "Poli Gigi" },
+    { id: 3, name: "Poli Anak" },
+    { id: 4, name: "Poli Kebidanan & Kandungan" },
+    { id: 5, name: "Poli Penyakit Dalam" }
+];
+
+export const docterOptions = [
+    { id: 1, name: "dr. Andi Pratama", poli: 1 },
+    { id: 2, name: "dr. Siti Aisyah", poli: 1 },
+    { id: 3, name: "dr. Budi Santoso", poli: 1 },
+
+    { id: 4, name: "drg. Rina Marlina", poli: 2 },
+    { id: 5, name: "drg. Fajar Nugroho", poli: 2 },
+    { id: 6, name: "drg. Dewi Lestari", poli: 2 },
+
+    { id: 7, name: "dr. Maya Putri, Sp.A", poli: 3 },
+    { id: 8, name: "dr. Rizky Hidayat, Sp.A", poli: 3 },
+    { id: 9, name: "dr. Liana Kusuma, Sp.A", poli: 3 },
+
+    { id: 10, name: "dr. Anita Rahmawati, Sp.OG", poli: 4 },
+    { id: 11, name: "dr. Hendra Wijaya, Sp.OG", poli: 4 },
+    { id: 12, name: "dr. Nurul Hasanah, Sp.OG", poli: 4 },
+
+    { id: 13, name: "dr. Ahmad Fauzi, Sp.PD", poli: 5 },
+    { id: 14, name: "dr. Kevin Prabowo, Sp.PD", poli: 5 },
+    { id: 15, name: "dr. Yuliana Hartono, Sp.PD", poli: 5 },
+];
+
+

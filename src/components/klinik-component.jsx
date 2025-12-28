@@ -69,6 +69,21 @@ const KlinikComponent = () => {
     };
 
 
+    const totalSemuaBiaya = tindakanList.reduce(
+        (sum, item) => sum + (item.harga * item.jumlah),
+        0
+    );
+
+    const resetForm = () => {
+        setPoli("");
+        setDokter(null);
+        setFilteredDokter([]);
+
+        setTindakanList([
+            { tindakan: "", harga: 0, jumlah: 1 }
+        ]);
+    };
+
 
     return (
         <div>
@@ -205,8 +220,8 @@ const KlinikComponent = () => {
                                     </div>
 
                                     <div className="mb-3 w-10">
-                                        <input type="text" className="form-control" id="total" readOnly={true}
-                                               aria-describedby="total" placeholder={'Total Harga'}
+                                        <input type="text" className="form-control" id="totalHarga" readOnly={true}
+                                               aria-describedby="totalHarga" placeholder={'Total Harga'}
                                                value={item.harga ? (item.harga * item.jumlah).toLocaleString("id-ID") : ""}
                                         />
                                     </div>
@@ -223,6 +238,36 @@ const KlinikComponent = () => {
                             >
                                 <i className="bi bi-plus-circle"></i>
                             </button>
+
+                            <div className="card w-100 mt-5">
+                                <div className='card-header'>
+                                    <div className={'d-flex gap-3'}>
+
+                                    <input type="text" className="form-control w-50" id="totalSemuaBiaya" readOnly={true}
+                                           aria-describedby="totalSemuaBiaya" placeholder={'Total Semua'}
+                                           value={"Rp "+totalSemuaBiaya.toLocaleString("id-ID")}
+                                    />
+
+                                <button
+                                    type="button"
+                                    className="btn btn-danger w-25"
+                                    onClick={resetForm}
+                                    disabled={!dokter && tindakanList.length === 1 && !tindakanList[0].tindakan}
+                                >
+                                    <i className="bi bi-x-circle"></i> Batal
+                                </button>
+
+                                <button
+                                    type="button"
+                                    className="btn btn-success w-25"
+                                >
+                                    <i className="bi bi-check2-circle"></i> Order
+                                </button>
+
+                                    </div>
+                                </div>
+                            </div>
+
 
                         </div>
                     </div>

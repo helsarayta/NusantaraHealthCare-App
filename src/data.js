@@ -99,5 +99,114 @@ export const tindakanOptions = [
     { id: 15, name: "Pembuatan Surat Keterangan Sehat", tarif: 20000 }
 ];
 
+export const daftarResep =
+    [
+        {
+            noResep: "RSP-001",
+            namaPasien: "Andi Pratama",
+            noBilling: "BILL-1001",
+            tanggal: "2025-01-05",
+            namaDokter: "Dr. Budi Santoso",
+            obatList: [
+                { namaObat: "Paracetamol", jumlah: 10, harga: 2000 },
+                { namaObat: "Amoxicillin", jumlah: 20, harga: 3500 }
+            ]
+        },
+        {
+            noResep: "RSP-002",
+            namaPasien: "Siti Aminah",
+            noBilling: "BILL-1002",
+            tanggal: "2025-01-06",
+            namaDokter: "Dr. Rina Putri",
+            obatList: [
+                { namaObat: "Ibuprofen", jumlah: 15, harga: 3000 }
+            ]
+        },
+        {
+            noResep: "RSP-003",
+            namaPasien: "Doni Saputra",
+            noBilling: "BILL-1003",
+            tanggal: "2025-01-06",
+            namaDokter: "Dr. Agus Wijaya",
+            obatList: [
+                { namaObat: "CTM", jumlah: 10, harga: 1500 },
+                { namaObat: "Vitamin C", jumlah: 30, harga: 1000 }
+            ]
+        },
+        {
+            noResep: "RSP-004",
+            namaPasien: "Maya Lestari",
+            noBilling: "BILL-1004",
+            tanggal: "2025-01-07",
+            namaDokter: "Dr. Nina Kurnia",
+            obatList: [
+                { namaObat: "Antasida", jumlah: 12, harga: 2500 }
+            ]
+        },
+        {
+            noResep: "RSP-005",
+            namaPasien: "Rizky Hidayat",
+            noBilling: "BILL-1005",
+            tanggal: "2025-01-07",
+            namaDokter: "Dr. Budi Santoso",
+            obatList: [
+                { namaObat: "Omeprazole", jumlah: 14, harga: 4000 },
+                { namaObat: "Domperidone", jumlah: 10, harga: 3500 }
+            ]
+        },
+        {
+            noResep: "RSP-006",
+            namaPasien: "Lina Marlina",
+            noBilling: "BILL-1006",
+            tanggal: "2025-01-08",
+            namaDokter: "Dr. Rina Putri",
+            obatList: [
+                { namaObat: "Asam Mefenamat", jumlah: 15, harga: 3000 }
+            ]
+        },
+        {
+            noResep: "RSP-007",
+            namaPasien: "Fajar Nugroho",
+            noBilling: "BILL-1007",
+            tanggal: "2025-01-08",
+            namaDokter: "Dr. Agus Wijaya",
+            obatList: [
+                { namaObat: "Cefixime", jumlah: 10, harga: 6000 }
+            ]
+        },
+        {
+            noResep: "RSP-008",
+            namaPasien: "Dewi Anggraini",
+            noBilling: "BILL-1008",
+            tanggal: "2025-01-09",
+            namaDokter: "Dr. Nina Kurnia",
+            obatList: [
+                { namaObat: "Salbutamol", jumlah: 20, harga: 2500 }
+            ]
+        },
+        {
+            noResep: "RSP-009",
+            namaPasien: "Hendra Wijaya",
+            noBilling: "BILL-1009",
+            tanggal: "2025-01-09",
+            namaDokter: "Dr. Budi Santoso",
+            obatList: [
+                { namaObat: "Amlodipine", jumlah: 30, harga: 2000 }
+            ]
+        },
+        {
+            noResep: "RSP-010",
+            namaPasien: "Putri Rahma",
+            noBilling: "BILL-1010",
+            tanggal: "2025-01-10",
+            namaDokter: "Dr. Rina Putri",
+            obatList: [
+                { namaObat: "Vitamin B Complex", jumlah: 20, harga: 1800 },
+                { namaObat: "Zinc", jumlah: 15, harga: 2200 }
+            ]
+        }
+    ];
+
+
 
 

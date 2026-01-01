@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {daftarResep} from "../data";
+import TambahResepComponent from "./tambah-resep-component";
 
 const FarmasiComponent = () => {
     const [expandedResep, setExpandedResep] = useState(null);
@@ -9,6 +10,12 @@ const FarmasiComponent = () => {
         namaPasien: '',
         namaDokter: ''
     });
+    const [showTambahResep, setShowTambahResep] = useState(false);
+
+    if (showTambahResep) {
+        return <TambahResepComponent onBack={() => setShowTambahResep(false)} />;
+    }
+
 
     const toggleExpand = (noResep) => {
         setExpandedResep(prev => (prev === noResep ? null : noResep));
@@ -42,6 +49,7 @@ const FarmasiComponent = () => {
                             <button
                                 type="button"
                                 className="btn btn-danger d-flex align-items-center justify-content-center"
+                                onClick={() => setShowTambahResep(true)}
                             >
                                 Tambah Resep
                             </button>

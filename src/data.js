@@ -207,6 +207,14 @@ export const daftarResep =
         }
     ];
 
+export const obatOptions = [
+    { id: 1, name: "Paracetamol", harga: 2000 },
+    { id: 2, name: "Amoxicillin", harga: 3500 },
+    { id: 3, name: "Ibuprofen", harga: 3000 },
+    { id: 4, name: "Vitamin C", harga: 1000 }
+];
+
+
 
 
 

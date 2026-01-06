@@ -42,6 +42,16 @@ const SidebarMenuComponent = ({ onMenuClick, activePage }) => {
                         Farmasi
                     </button>
                 </li>
+
+                <li className={`nav-item sidebar-item ${activePage === "pembayaran" ? "active" : ""}`}>
+                    <button
+                        className="sidebar-link"
+                        onClick={() => onMenuClick("pembayaran")}
+                    >
+                        <i className="bi bi-cash-coin me-2"></i>
+                        Pembayaran
+                    </button>
+                </li>
             </ul>
 
         </aside>

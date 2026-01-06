@@ -215,6 +215,131 @@ export const obatOptions = [
 ];
 
 
+export const pembayaranData = [
+    {
+        namaPasien: "Ahmad Fauzi",
+        noRm: "RM001",
+        dokter: "Dr. Andi",
+        layanan: [
+            { jenis: "Konsultasi", harga: 50000 },
+            { jenis: "Laboratorium", harga: 75000 }
+        ],
+        resep: [
+            { namaObat: "Paracetamol", jumlah: 10, harga: 2000 },
+            { namaObat: "Amoxicillin", jumlah: 10, harga: 3000 }
+        ]
+    },
+    {
+        namaPasien: "Siti Aminah",
+        noRm: "RM002",
+        dokter: "Dr. Budi",
+        layanan: [
+            { jenis: "Konsultasi", harga: 50000 }
+        ],
+        resep: [
+            { namaObat: "Vitamin C", jumlah: 20, harga: 1000 }
+        ]
+    },
+    {
+        namaPasien: "Budi Santoso",
+        noRm: "RM003",
+        dokter: "Dr. Clara",
+        layanan: [
+            { jenis: "Konsultasi", harga: 50000 },
+            { jenis: "Rontgen", harga: 120000 }
+        ],
+        resep: [
+            { namaObat: "Ibuprofen", jumlah: 10, harga: 4000 },
+            { namaObat: "Omeprazole", jumlah: 10, harga: 3500 }
+        ]
+    }
+];
+
+export const strukPembayaranList = [
+    {
+        noTransaksi: "TRX-20250108-001",
+        klinik: {
+            nama: "Klinik Sehat Sentosa",
+            alamat: "Jl. Mawar No. 10",
+            telp: "021-889900"
+        },
+        pasien: {
+            nama: "Ahmad Fauzi",
+            rm: "RM001",
+            dokter: "Dr. Andi"
+        },
+        layanan: [
+            { nama: "Konsultasi", harga: 50000 },
+            { nama: "Laboratorium", harga: 75000 }
+        ],
+        obat: [
+            { nama: "Paracetamol", jumlah: 10, harga: 2000 },
+            { nama: "Amoxicillin", jumlah: 10, harga: 3000 }
+        ],
+        pembayaran: {
+            metode: "QRIS",
+            kasir: "Admin1",
+            tanggal: "2025-01-08 14:30"
+        }
+    },
+
+    {
+        noTransaksi: "TRX-20250108-002",
+        klinik: {
+            nama: "Klinik Sehat Sentosa",
+            alamat: "Jl. Mawar No. 10",
+            telp: "021-889900"
+        },
+        pasien: {
+            nama: "Siti Aminah",
+            rm: "RM002",
+            dokter: "Dr. Budi"
+        },
+        layanan: [
+            { nama: "Konsultasi", harga: 50000 }
+        ],
+        obat: [
+            { nama: "Vitamin C", jumlah: 20, harga: 1000 }
+        ],
+        pembayaran: {
+            metode: "Tunai",
+            kasir: "Admin2",
+            tanggal: "2025-01-08 15:10"
+        }
+    },
+
+    {
+        noTransaksi: "TRX-20250108-003",
+        klinik: {
+            nama: "Klinik Sehat Sentosa",
+            alamat: "Jl. Mawar No. 10",
+            telp: "021-889900"
+        },
+        pasien: {
+            nama: "Budi Santoso",
+            rm: "RM003",
+            dokter: "Dr. Clara"
+        },
+        layanan: [
+            { nama: "Konsultasi", harga: 50000 },
+            { nama: "Rontgen", harga: 120000 }
+        ],
+        obat: [
+            { nama: "Ibuprofen", jumlah: 10, harga: 4000 },
+            { nama: "Omeprazole", jumlah: 10, harga: 3500 }
+        ],
+        pembayaran: {
+            metode: "Debit",
+            kasir: "Admin1",
+            tanggal: "2025-01-08 16:05"
+        }
+    }
+];
+
+
+
+
+
 
 
 

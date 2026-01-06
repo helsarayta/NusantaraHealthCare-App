@@ -8,6 +8,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import FooterComponent from "./components/footer-component";
+import PembayaranComponent from "./components/pembayaran-component";
 
 
 
@@ -22,6 +23,8 @@ function App() {
                 return <KlinikComponent />;
             case "farmasi":
                 return <FarmasiComponent />;
+            case "pembayaran":
+                return <PembayaranComponent />;
             default:
                 return <PendaftaranComponent />;
         }
